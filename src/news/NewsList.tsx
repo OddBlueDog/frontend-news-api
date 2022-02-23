@@ -32,6 +32,7 @@ export default function NewsList() {
       <div className="flex my-4">
         <label className="block">
           <input
+            data-cy="search-input"
             type="text"
             name="search"
             className="
@@ -48,6 +49,7 @@ export default function NewsList() {
         </label>
 
         <button
+          data-cy="search-submit"
           type="button"
           disabled={latestNews.isFetching}
           onClick={(e) => setsearchTerm(searchInput)}

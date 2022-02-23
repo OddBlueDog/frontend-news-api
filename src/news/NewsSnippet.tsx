@@ -13,7 +13,7 @@ export default function NewsSnippet({
   source,
 }: newsArticle) {
   return (
-    <article className="bg-white rounded-lg flex flex-col">
+    <article data-cy="news-snippet" className="bg-white rounded-lg flex flex-col">
       <img
         className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center"
         src={urlToImage}
@@ -29,8 +29,7 @@ export default function NewsSnippet({
           target="_blank"
           rel="noopener noreferrer"
           className=" text-center bg-black font-bold text-white p-2 inline-block mt-4 -mb-4 -mx-4"
-          href={url}
-        >
+          href={url}>
           Read More
         </a>
       </div>
