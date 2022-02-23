@@ -25,11 +25,16 @@ export default function NewsList() {
     );
   });
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setsearchTerm(searchInput);
+  };
+
   return (
     <DefaultLayout>
       <h1 className="font-semibold text-3xl font-serif my-8">Latest News</h1>
 
-      <div className="flex my-4">
+      <form className="flex my-4" onSubmit={handleSubmit}>
         <label className="block">
           <input
             data-cy="search-input"
@@ -50,9 +55,8 @@ export default function NewsList() {
 
         <button
           data-cy="search-submit"
-          type="button"
+          type="submit"
           disabled={latestNews.isFetching}
-          onClick={(e) => setsearchTerm(searchInput)}
           className="rounded-md flex bg-indigo-500 font-bold text-white p-2 px-6 grow-0 ml-4 items-center">
           {latestNews.isFetching && (
             <svg
@@ -75,7 +79,7 @@ export default function NewsList() {
           )}
           Search
         </button>
-      </div>
+      </form>
 
       <main className="grid grid-cols-1 md:grid-cols-3 gap-4">{latestNewsSnippets}</main>
     </DefaultLayout>

@@ -55,3 +55,14 @@ it('Test Search', () => {
 
   cy.get('[data-cy=news-snippet]').should('be.visible');
 });
+
+it('Test news snippets have all sections and are visible', () => {
+  cy.visit('http://localhost:3000');
+
+  cy.get('[data-cy=news-snippet]').within(() => {
+    cy.get('[data-cy=news-snippet-date]').should('be.visible');
+    cy.get('[data-cy=news-snippet-img]').should('be.visible');
+    cy.get('[data-cy=news-snippet-link]').should('be.visible');
+    cy.get('[data-cy=news-snippet-title]').should('be.visible');
+  });
+});
