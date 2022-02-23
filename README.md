@@ -1,9 +1,11 @@
-
 ## Dependencies
+
 - Node.js 16+
 - npm 8+
 
 ## Run Locally
+
+### Make sure backend is running: https://github.com/OddBlueDog/backend-news-api
 
 Clone the project
 
